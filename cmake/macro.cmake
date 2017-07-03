@@ -1,0 +1,15 @@
+
+# Macro PROJECT_FOLDER
+# Change where CMake should output compiled libraries and executables.
+# This is based on preference, so these set() commands should be changed or removed.
+macro(PROJECT_FOLDER PROJECT_NAME)
+    set(PROJECT_ROOT ${CMAKE_SOURCE_DIR})
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_ROOT}/bin)
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_ROOT}/dll)
+    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_ROOT}/lib)
+    MSG_COLOR(${BW} "toto")
+    MSG_COLOR(${BW} "RUNTIME_OUTPUT_DIRECTORY: ${BR}${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+    MSG_COLOR(${BW} "LIBRARY_OUTPUT_DIRECTORY: ${BR}${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
+    MSG_COLOR(${BW} "ARCHIVE_OUTPUT_DIRECTORY: ${BR}${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}")
+endmacro()
+
